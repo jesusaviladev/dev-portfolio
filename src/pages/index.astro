@@ -1,14 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Navbar from '../components/Navbar.astro'
+import Card from '../components/Card.astro'
+
+const techStack = [
+    {
+        title: 'Javascript',
+        logo: '/js.svg',
+    },
+    {
+        title: 'Typescript',
+        logo: '/typescript.svg',
+    },
+    {
+        title: 'Node JS',
+        logo: '/node.svg',
+    },
+    {
+        title: 'React',
+        logo: '/react.svg',
+    },
+    {
+        title: 'Tailwind',
+        logo: '/tailwind.svg',
+    },
+    {
+        title: 'GraphQL',
+        logo: '/graphql.svg',
+    },
+    {
+        title: 'Vite',
+        logo: '/vite.svg',
+    },
+    {
+        title: 'NextJS',
+        logo: '/next.svg',
+    },
+    {
+        title: 'Git',
+        logo: '/git.svg',
+    },
+]
 ---
 
 <Layout title="A dev portfolio">
     <main>
         <Navbar />
-        <section class="bg-white h-[864px]">
+        <section
+            class="bg-hero-pattern from-white from-10% via-transparent to-transparent bg-cover h-[864px]"
+        >
             <h1 class="text-6xl font-semibold">Crafting Code Elegantly</h1>
-            Showcasing the font
+            <p class="text-3xl font-medium">Showcasing the font</p>
         </section>
         <section
             id="projects"
@@ -22,15 +64,80 @@ import Navbar from '../components/Navbar.astro'
         </section>
         <section class="bg-black h-[680px] text-white">
             <div class="h-3/5 py-14">
-                <h2 class="text-4xl font-bold p-2">Tech stack</h2>
+                <h2 class="text-4xl font-bold p-2">My Tech Stack</h2>
             </div>
-            <div class="h-2/5 bg-[color:var(--dark-blue)]">node</div>
+            <div class="h-2/5 bg-[color:var(--dark-blue)] py-14 px-4">
+                <ul class="flex justify-center items-center gap-4">
+                    {
+                        techStack.map((tech) => (
+                            <Card title={tech.title} imageSrc={tech.logo} />
+                        ))
+                    }
+                </ul>
+            </div>
         </section>
         <section id="contact" class="h-[652px] bg-black text-white">
             <h2 class="text-4xl font-bold p-2">Contact</h2>
         </section>
     </main>
-    <footer class="h-[260px] bg-black text-white">footer</footer>
+    <footer
+        class="h-[260px] py-16 px-8 grid grid-rows-1 grid-cols-2 bg-black text-white"
+    >
+        <section class="p-2">
+            <p class="my-2">Made with 💖 by @jesusaviladev</p>
+        </section>
+        <section class="p-2">
+            <h3 class="font-medium my-1">Social links</h3>
+            <nav class="flex gap-6 items-center">
+                <a
+                    href="https://github.com/jesusaviladev"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <svg
+                        viewBox="0 0 16 16"
+                        aria-hidden="true"
+                        width="32"
+                        height="32"
+                        astro-icon="social/github"
+                        ><path
+                            fill="currentColor"
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                        ></path></svg
+                    >
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 448 512"
+                        class="icon"
+                        data-astro-cid-7kdedvnl=""
+                        data-icon="linkedin"
+                    >
+                        <symbol id="ai:local:linkedin"
+                            ><path
+                                fill="currentcolor"
+                                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                            ></path></symbol
+                        ><use xlink:href="#ai:local:linkedin"></use>
+                    </svg>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="32"
+                        height="32"
+                        fill="currentColor"
+                        ><path fill="none" d="M0 0h24v24H0z"></path><path
+                            d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"
+                        ></path></svg
+                    >
+                </a>
+            </nav>
+        </section>
+    </footer>
 </Layout>
 
 <style>
