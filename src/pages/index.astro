@@ -1,17 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
+import Navbar from '../components/Navbar.astro'
 ---
 
 <Layout title="A dev portfolio">
     <main>
-        <h1 class="text-white text-center text-4xl">hello</h1>
+        <Navbar />
+        <section class="bg-white h-[864px]">
+            <h1 class="text-6xl font-semibold">Crafting Code Elegantly</h1>
+            Showcasing the font
+        </section>
+        <section
+            id="projects"
+            class="bg-black h-[1130px] py-32 px-4 text-white"
+        >
+            <h2 class="text-4xl font-bold p-2">My projects</h2>
+        </section>
+        <section id="about" class="bg-white h-[513px] py-36 px-4 text-black">
+            <h2 class="text-4xl font-bold p-2 text-green-500">About</h2>
+            <p class="text-6xl font-bold p-2">Lorem ipsum dolor sit amet</p>
+        </section>
+        <section class="bg-black h-[680px] text-white">
+            <div class="h-3/5 py-14">
+                <h2 class="text-4xl font-bold p-2">Tech stack</h2>
+            </div>
+            <div class="h-2/5 bg-[color:var(--dark-blue)]">node</div>
+        </section>
+        <section id="contact" class="h-[652px] bg-black text-white">
+            <h2 class="text-4xl font-bold p-2">Contact</h2>
+        </section>
     </main>
+    <footer class="h-[260px] bg-black text-white">footer</footer>
 </Layout>
 
 <style>
     main {
         min-height: 100vh;
-        background-color: var(--black);
     }
 </style>
