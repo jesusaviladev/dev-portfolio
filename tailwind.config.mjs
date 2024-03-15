@@ -8,6 +8,10 @@ export default {
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: {
+                'hero-pattern':
+                    "linear-gradient(to bottom, var(--tw-gradient-stops)), url('/hero.png')",
+            },
         },
     },
     plugins: [],
