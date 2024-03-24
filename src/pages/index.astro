@@ -43,14 +43,29 @@ const techStack = [
 ]
 ---
 
-<Layout title="A dev portfolio">
+<Layout title="Portfolio de Jesus Avila, desarrollador web">
     <main>
         <Navbar />
         <section
-            class="bg-hero-pattern from-white from-10% via-transparent to-transparent bg-cover h-[864px]"
+            class="from-white from-10% via-transparent to-transparent bg-cover h-[864px] flex justify-center items-center"
         >
-            <h1 class="text-6xl font-semibold">Crafting Code Elegantly</h1>
-            <p class="text-3xl font-medium">Showcasing the font</p>
+            <div class="w-[1024px] h-[480px] flex flex-col items-center gap-4">
+                <img
+                    class="rounded-full w-40 h-40"
+                    src="https://avatars.githubusercontent.com/u/76699893?v=4"
+                    alt="Foto de perfil de jesusaviladev"
+                />
+                <h1 class="text-6xl font-bold my-4 text-center">
+                    Hola 👋🏻, soy <span class="text-green-500"
+                        >@jesusaviladev</span
+                    >
+                </h1>
+                <p class="text-xl font-medium text-center">
+                    Programador y entusiasta de la tecnología 👨‍💻, especialista
+                    en el desarrollo de aplicaciones utilizando el ecosistema de
+                    Javascript
+                </p>
+            </div>
         </section>
         <section
             id="projects"
@@ -84,7 +99,11 @@ const techStack = [
         class="h-[260px] py-16 px-8 grid grid-rows-1 grid-cols-2 bg-black text-white"
     >
         <section class="p-2">
-            <p class="my-2">Made with 💖 by @jesusaviladev</p>
+            <p class="my-2">
+                Made with 💖 by <span class="text-green-500"
+                    >@jesusaviladev</span
+                >
+            </p>
         </section>
         <section class="p-2">
             <h3 class="font-medium my-1">Social links</h3>
