@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Navbar from '../components/Navbar.astro'
+import Navbar from '../components/astro/Navbar.astro'
 import ProjectsList from '../components/ProjectsList'
-import Card from '../components/Card.astro'
+import Card from '../components/astro/Card.astro'
 import GithubIcon from '../components/icons/GithubIcon.astro'
 import LinkedInIcon from '../components/icons/LinkedIn.astro'
 import FacebookIcon from '../components/icons/FacebookIcon.astro'
@@ -61,8 +61,8 @@ const techStack = [
                     alt="Foto de perfil de jesusaviladev"
                 />
                 <h1 class="text-6xl font-bold my-4 text-center">
-                    Hola 👋, soy <span class="text-green-500"
-                        >@jesusaviladev</span
+                    Hola <span class="inline-block animate-wave">👋</span>, soy <span
+                        class="text-green-500">@jesusaviladev</span
                     >
                 </h1>
                 <p class="text-xl font-normal text-center">
@@ -74,9 +74,9 @@ const techStack = [
         </section>
         <section
             id="projects"
-            class="bg-black h-[1130px] py-32 px-4 text-white overflow-hidden"
+            class="bg-black min-h-[1130px] py-32 px-4 text-white overflow-hidden"
         >
-            <h2 class="text-4xl font-bold p-2">My projects</h2>
+            <h2 class="text-4xl font-bold p-2">Projects</h2>
             <ProjectsList client:only />
         </section>
         <section id="about" class="bg-white h-[513px] py-36 px-4 text-black">

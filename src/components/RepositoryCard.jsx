@@ -1,16 +1,53 @@
+import IconLink from './IconLink'
+import GitForkIcon from './icons/GitForkIcon'
+import StarIcon from './icons/StarIcon'
+import { GITHUB_COLORS } from '../lib/utils/githubColors'
+import ArrowRightIcon from './icons/ArrowRightIcon'
+
 const RepositoryCard = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
-        <article className=" p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {props.full_name}
-            </h5>
+        <article className="p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a
+                href={props.html_url}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:underline"
+            >
+                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    {props.name}
+                </h5>
+            </a>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 {props.description}
             </p>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {props.language}
-            </p>
+            <div className="flex gap-4 mb-3 font-normal text-gray-700 dark:text-gray-400">
+                {props.language && (
+                    <p className="flex gap-2 items-center">
+                        <span
+                            className="inline-block rounded-full size-3"
+                            style={{
+                                backgroundColor:
+                                    GITHUB_COLORS[props.language]?.color,
+                            }}
+                        ></span>
+                        {props.language}
+                    </p>
+                )}
+                <IconLink
+                    icon={<StarIcon width="24" height="24" />}
+                    href={`${props.html_url}/stargazers`}
+                >
+                    {props.stargazers_count}
+                </IconLink>
+                <IconLink
+                    icon={<GitForkIcon width="24" height="24" />}
+                    href={`${props.html_url}/forks`}
+                >
+                    {props.forks_count}
+                </IconLink>
+                <p>Updated {props.updated_at}</p>
+            </div>
             <a
                 href={props.html_url}
                 target="_blank"
@@ -18,21 +55,7 @@ const RepositoryCard = (props) => {
                 className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
                 See repository
-                <svg
-                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                </svg>
+                <ArrowRightIcon />
             </a>
         </article>
     )
