@@ -1,12 +1,29 @@
+---
+import MailIcon from '../icons/MailIcon.astro'
+import PenIcon from '../icons/PenIcon.astro'
+import SourceCodeIcon from '../icons/SourceCodeIcon.astro'
+import BriefcaseIcon from '../icons/BriefcaseIcon.astro'
+---
+
 <nav class="h-14 bg-white flex items-center p-2">
-    <div class="w-48">Logo</div>
-    <div class="flex flex-1 justify-end items-center gap-3">
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+    <div class="w-48 px-6">
+        <SourceCodeIcon class="size-10" />
+    </div>
+    <div class="flex flex-1 justify-end items-center gap-6">
+        <a href="#about" class="flex gap-1 items-center">
+            <PenIcon class="size-6" />
+            About
+        </a>
+        <a href="#contact" class="flex gap-1 items-center">
+            <MailIcon class="size-6" />
+            Contact
+        </a>
         <a
             href="#projects"
-            class="flex items-center h-10 bg-green-500 rounded-md px-5 py-1 text-white"
-            >My projects</a
+            class="flex gap-1 items-center h-10 bg-green-500 rounded-md px-5 py-1 text-white"
         >
+            <BriefcaseIcon class="size-6" />
+            My projects
+        </a>
     </div>
 </nav>
