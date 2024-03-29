@@ -24,7 +24,7 @@ const RepositoryCard = (props) => {
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 {props.description}
             </p>
-            <div className="flex gap-4 mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <div className="flex items-center gap-4 mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
                 {props.language && (
                     <p className="flex gap-2 items-center">
                         <span
@@ -38,13 +38,13 @@ const RepositoryCard = (props) => {
                     </p>
                 )}
                 <IconLink
-                    icon={<StarIcon width="24" height="24" />}
+                    icon={<StarIcon className="size-6" />}
                     href={`${props.html_url}/stargazers`}
                 >
                     {props.stargazers_count}
                 </IconLink>
                 <IconLink
-                    icon={<GitForkIcon width="24" height="24" />}
+                    icon={<GitForkIcon className="size-6" />}
                     href={`${props.html_url}/forks`}
                 >
                     {props.forks_count}
