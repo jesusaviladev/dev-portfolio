@@ -3,23 +3,19 @@ import ArrowUpIcon from '../icons/ArrowUpIcon.astro'
 ---
 
 <button
-    class="opacity-0 fixed bottom-6 right-6 flex justify-center items-center rounded-full bg-green-500 hover:bg-green-400 p-2 animate-bounce"
+    class="opacity-0 transition-opacity fixed bottom-6 right-6 flex justify-center items-center rounded-full bg-green-500 hover:bg-green-400 p-3 animate-bounce"
     id="scroll"
 >
-    <ArrowUpIcon width="20" height="20" color="#fff" />
+    <ArrowUpIcon color="#fff" class="size-8" />
 </button>
 
 <script>
     const btnScrollToTop = document.getElementById('scroll')
 
-    btnScrollToTop?.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-        })
-    })
+    btnScrollToTop?.addEventListener('click', () => window.scrollTo({ top: 0 }))
 
     document.addEventListener('scroll', () => {
-        if (window.scrollY > 1200) {
+        if (window.scrollY > 1360) {
             btnScrollToTop?.classList.add('opacity-100')
         } else {
             btnScrollToTop?.classList.remove('opacity-100')
