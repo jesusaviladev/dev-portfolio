@@ -6,6 +6,7 @@ import Card from '../components/astro/Card.astro'
 import GithubIcon from '../components/icons/GithubIcon.astro'
 import LinkedInIcon from '../components/icons/LinkedIn.astro'
 import FacebookIcon from '../components/icons/FacebookIcon.astro'
+import ScrollToTop from '../components/astro/ScrollToTop.astro'
 
 const techStack = [
     {
@@ -76,11 +77,13 @@ const techStack = [
             id="projects"
             class="bg-black min-h-[1130px] py-32 px-4 text-white overflow-hidden"
         >
-            <h2 class="text-4xl font-bold p-2">Projects</h2>
+            <h2 class="text-4xl font-bold p-2 text-center">Projects 💼</h2>
             <ProjectsList client:only />
         </section>
         <section id="about" class="bg-white h-[513px] py-36 px-4 text-black">
-            <h2 class="text-4xl font-bold p-2 text-green-500">About</h2>
+            <h2 class="text-4xl text-center font-bold p-2 text-green-500">
+                About
+            </h2>
             <p class="text-6xl font-bold p-2">Lorem ipsum dolor sit amet</p>
         </section>
         <section class="bg-black h-[680px] text-white">
@@ -97,16 +100,17 @@ const techStack = [
                 </ul>
             </div>
         </section>
-        <section id="contact" class="h-[652px] bg-black text-white">
-            <h2 class="text-4xl font-bold p-2">Contact</h2>
+        <section id="contact" class="h-[652px] py-36 px-4 bg-black text-white">
+            <h2 class="text-4xl text-center font-bold p-2">Contact 📥</h2>
         </section>
+        <ScrollToTop />
     </main>
     <footer
         class="h-[260px] py-16 px-8 grid grid-rows-1 grid-cols-2 bg-black text-white"
     >
         <section class="p-2">
             <p class="my-2">
-                Made with 💖 by <span class="text-green-500"
+                Made with 💖 and 🚀 Astro by <span class="text-green-500"
                     >@jesusaviladev</span
                 >
             </p>
@@ -133,6 +137,16 @@ const techStack = [
 </Layout>
 
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
     main {
         min-height: 100vh;
     }
