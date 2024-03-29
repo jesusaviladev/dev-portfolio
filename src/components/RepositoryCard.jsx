@@ -3,9 +3,12 @@ import GitForkIcon from './icons/GitForkIcon'
 import StarIcon from './icons/StarIcon'
 import { GITHUB_COLORS } from '../lib/utils/githubColors'
 import ArrowRightIcon from './icons/ArrowRightIcon'
+import { DateTime } from 'luxon'
 
 const RepositoryCard = (props) => {
     // console.log(props)
+    const updateDate = DateTime.fromISO(props.updated_at).setLocale('en-US')
+
     return (
         <article className="p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a
@@ -46,7 +49,7 @@ const RepositoryCard = (props) => {
                 >
                     {props.forks_count}
                 </IconLink>
-                <p>Updated {props.updated_at}</p>
+                <p>Updated {updateDate.toRelative()}</p>
             </div>
             <a
                 href={props.html_url}
