@@ -49,8 +49,10 @@ const techStack = [
 ---
 
 <Layout title="Portfolio de Jesus Avila, desarrollador web">
-    <main>
+    <header>
         <Navbar />
+    </header>
+    <main>
         <section
             id="top"
             class="from-white from-10% via-transparent to-transparent bg-cover h-[864px] flex justify-center items-center"
@@ -80,17 +82,46 @@ const techStack = [
             <h2 class="text-4xl font-bold p-2 text-center">Projects 💼</h2>
             <ProjectsList client:only />
         </section>
-        <section id="about" class="bg-white h-[513px] py-36 px-4 text-black">
+        <section id="about" class="bg-white pt-32 text-black min-h-[700px]">
             <h2 class="text-4xl text-center font-bold p-2 text-green-500">
-                About
+                About 🙋
             </h2>
-            <p class="text-6xl font-bold p-2">Lorem ipsum dolor sit amet</p>
-        </section>
-        <section class="bg-black h-[680px] text-white">
-            <div class="h-3/5 py-14">
-                <h2 class="text-4xl font-bold p-2">My Tech Stack</h2>
-            </div>
-            <div class="h-2/5 bg-[color:var(--dark-blue)] py-14 px-4">
+            <section class="py-14 px-12">
+                <p class="text-lg p-2">
+                    <strong>+3 años de experiencia en desarrollo.</strong>
+                    Soy un desarrollador frontend radicado en Barinas, Venezuela
+                    🇻🇪, me especializo en
+                    <a
+                        href="https://react.dev"
+                        target="_blank"
+                        rel="noreferrer"
+                        class="text-[#087ea4]">React</a
+                    > y
+                    <a
+                        href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+                        target="_blank"
+                        rel="noreferrer"
+                        class="text-[#beab2b]"
+                    >
+                        Javascript
+                    </a> como mis tecnologías principales 🐱‍💻. Tambien aplico mi
+                    experiencia en desarrollo backend con
+                    <a
+                        href="https://nodejs.org/en"
+                        target="_blank"
+                        rel="noreferrer"
+                        class="text-[#417e38]"
+                        >Node.js
+                    </a> y desarrollo movil con
+                    <a
+                        href="https://reactnative.dev/"
+                        target="_blank"
+                        rel="noreferrer"
+                        class="text-[#39bde2]">React Native</a
+                    > 📱.
+                </p>
+            </section>
+            <section class="py-14">
                 <ul class="flex justify-center items-center gap-4">
                     {
                         techStack.map((tech) => (
@@ -98,9 +129,9 @@ const techStack = [
                         ))
                     }
                 </ul>
-            </div>
+            </section>
         </section>
-        <section id="contact" class="h-[652px] py-36 px-4 bg-black text-white">
+        <section id="contact" class="bg-black text-white h-[652px] py-36 px-4">
             <h2 class="text-4xl text-center font-bold p-2">Contact 📥</h2>
         </section>
         <ScrollToTop />
@@ -110,9 +141,12 @@ const techStack = [
     >
         <section class="p-2">
             <p class="my-2">
-                Made with 💖 and 🚀 Astro by <span class="text-green-500"
-                    >@jesusaviladev</span
-                >
+                Made with 💖 by
+                <span class="text-green-500">@jesusaviladev</span>. This website
+                is using
+                <a href="https://astro.build" target="_blank" rel="noreferrer">
+                    🚀 Astro
+                </a>
             </p>
         </section>
         <section class="p-2">
