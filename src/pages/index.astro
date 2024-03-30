@@ -7,45 +7,8 @@ import GithubIcon from '../components/icons/GithubIcon.astro'
 import LinkedInIcon from '../components/icons/LinkedIn.astro'
 import FacebookIcon from '../components/icons/FacebookIcon.astro'
 import ScrollToTop from '../components/astro/ScrollToTop.astro'
-
-const techStack = [
-    {
-        title: 'Javascript',
-        logo: '/js.svg',
-    },
-    {
-        title: 'Typescript',
-        logo: '/typescript.svg',
-    },
-    {
-        title: 'Node JS',
-        logo: '/node.svg',
-    },
-    {
-        title: 'React',
-        logo: '/react.svg',
-    },
-    {
-        title: 'Tailwind',
-        logo: '/tailwind.svg',
-    },
-    {
-        title: 'GraphQL',
-        logo: '/graphql.svg',
-    },
-    {
-        title: 'Vite',
-        logo: '/vite.svg',
-    },
-    {
-        title: 'NextJS',
-        logo: '/next.svg',
-    },
-    {
-        title: 'Git',
-        logo: '/git.svg',
-    },
-]
+import ContactForm from '../components/ContactForm'
+import { TECH_STACK } from '../constants/techStack'
 ---
 
 <Layout title="Portfolio de Jesus Avila, desarrollador web">
@@ -124,7 +87,7 @@ const techStack = [
             <section class="py-14">
                 <ul class="flex justify-center items-center gap-4">
                     {
-                        techStack.map((tech) => (
+                        TECH_STACK.map((tech) => (
                             <Card title={tech.title} imageSrc={tech.logo} />
                         ))
                     }
@@ -133,6 +96,7 @@ const techStack = [
         </section>
         <section id="contact" class="bg-black text-white h-[652px] py-36 px-4">
             <h2 class="text-4xl text-center font-bold p-2">Contact 📥</h2>
+            <ContactForm client:only />
         </section>
         <ScrollToTop />
     </main>
