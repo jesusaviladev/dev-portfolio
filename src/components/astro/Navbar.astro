@@ -5,7 +5,10 @@ import SourceCodeIcon from '../icons/SourceCodeIcon.astro'
 import BriefcaseIcon from '../icons/BriefcaseIcon.astro'
 ---
 
-<nav class="h-14 bg-white flex items-center p-2">
+<nav
+    id="nav"
+    class="w-full h-14 bg-white flex items-center p-2 fixed transition-opacity"
+>
     <div class="w-48 px-6">
         <SourceCodeIcon class="size-10" />
     </div>
@@ -27,3 +30,25 @@ import BriefcaseIcon from '../icons/BriefcaseIcon.astro'
         </a>
     </div>
 </nav>
+
+<script>
+    const navbar = document.querySelector('#nav')
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 56) {
+            navbar?.classList.add(
+                'shadow',
+                'border-b',
+                'border-slate-300',
+                'opacity-90'
+            )
+        } else {
+            navbar?.classList.remove(
+                'shadow',
+                'border-b',
+                'border-slate-300',
+                'opacity-90'
+            )
+        }
+    })
+</script>
