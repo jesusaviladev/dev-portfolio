@@ -22,6 +22,11 @@ const TextArea = ({ label, error, ...props }) => {
                 placeholder="Write your thoughts here..."
                 {...props}
             ></textarea>
+            {error && (
+                <p className="mt-2 text-sm text-red-600 dark:text-red-500">
+                    {error}
+                </p>
+            )}
         </div>
     )
 }
