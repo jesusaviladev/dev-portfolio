@@ -7,5 +7,5 @@ import tailwind from '@astrojs/tailwind'
 export default defineConfig({
     integrations: [react(), tailwind()],
     site: 'https://jesusaviladev.github.io',
-    base: 'jesusaviladev.github.io',
+    // base: 'jesusaviladev.github.io',
 })
