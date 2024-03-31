@@ -6,8 +6,10 @@ import Card from '../components/astro/Card.astro'
 import GithubIcon from '../components/icons/GithubIcon.astro'
 import LinkedInIcon from '../components/icons/LinkedIn.astro'
 import FacebookIcon from '../components/icons/FacebookIcon.astro'
+import InstagramIcon from '../components/icons/InstagramIcon.astro'
 import ScrollToTop from '../components/astro/ScrollToTop.astro'
 import ContactForm from '../components/ContactForm'
+import SocialButton from '../components/SocialButton'
 import { TECH_STACK } from '../constants/techStack'
 ---
 
@@ -36,6 +38,25 @@ import { TECH_STACK } from '../constants/techStack'
                     en el desarrollo de aplicaciones utilizando el ecosistema de
                     Javascript
                 </p>
+                <nav class="flex item-center justify-center mt-12">
+                    <SocialButton
+                        href="https://github.com/jesusaviladev"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <GithubIcon className="w-6 h-6 me-2" />
+                        Github
+                    </SocialButton>
+                    <SocialButton
+                        href="https://www.linkedin.com/in/jesusaviladev/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="bg-blue-600"
+                    >
+                        <LinkedInIcon className="w-6 h-6 me-2" />
+                        LinkedIn
+                    </SocialButton>
+                </nav>
             </div>
         </section>
         <section
@@ -115,27 +136,20 @@ import { TECH_STACK } from '../constants/techStack'
         </section>
         <section class="p-2">
             <h3 class="font-medium my-1">Social links</h3>
-            <nav class="flex gap-6 items-center">
-                <a
-                    href="https://github.com/jesusaviladev"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <GithubIcon class="size-8" />
-                </a>
-                <a
-                    href="https://www.linkedin.com/in/jesusaviladev/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <LinkedInIcon class="size-8" />
-                </a>
+            <nav class="flex gap-4 items-center">
                 <a
                     href="https://www.facebook.com/infernaldeathhm"
                     target="_blank"
                     rel="noreferrer"
                 >
                     <FacebookIcon class="size-8" />
+                </a>
+                <a
+                    href="https://www.instagram.com/jesusaviladev"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <InstagramIcon class="size-8" />
                 </a>
                 <a
                     aria-label="Chat on WhatsApp"
