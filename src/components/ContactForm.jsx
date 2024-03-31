@@ -4,6 +4,7 @@ import TextArea from './forms/TextArea'
 import Joi from 'joi'
 import { formatErrors } from '../lib/utils/formatErrors'
 import { submitForm } from '../lib/services/submitForm'
+import { HttpError } from '../lib/utils/errors'
 
 const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -26,26 +27,25 @@ const ContactForm = () => {
 
         const data = Object.fromEntries(new FormData(form))
 
-        const { error } = schema.validate(data, { abortEarly: false })
+        try {
+            await schema.validateAsync(data, { abortEarly: false })
 
-        if (error) {
-            const errors = formatErrors(error)
-            setIsSubmitting(false)
-            return setErrors(errors)
-        }
+            const { response, error } = await submitForm(data)
 
-        const { response, error: submitError } = await submitForm(data)
+            if (error) throw new HttpError(error)
 
-        if (!submitError) {
             console.log(response)
             form.reset()
-        } else {
-            setErrors({
-                form: submitError,
-            })
+        } catch (error) {
+            if (error instanceof Joi.ValidationError) {
+                const errors = formatErrors(error)
+                setErrors(errors)
+            } else if (error instanceof HttpError) {
+                setErrors({ form: error })
+            }
+        } finally {
+            setIsSubmitting(false)
         }
-
-        setIsSubmitting(false)
     }
 
     return (
