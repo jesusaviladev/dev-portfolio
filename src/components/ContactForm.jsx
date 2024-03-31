@@ -10,6 +10,16 @@ const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [errors, setErrors] = useState(null)
 
+    const clearField = (field) => {
+        if (!errors[field]) return
+
+        const newErrors = { ...errors }
+
+        delete newErrors[field] // must be the same key
+
+        setErrors(newErrors)
+    }
+
     const schema = Joi.object({
         name: Joi.string().min(3).required(),
         email: Joi.string()
@@ -56,17 +66,20 @@ const ContactForm = () => {
                     name="name"
                     placeholder="Your name"
                     error={errors?.name && errors.name}
+                    onFocus={() => clearField('name')}
                 />
                 <Input
                     label="Email"
                     name="email"
                     placeholder="Your email"
                     error={errors?.email && errors.email}
+                    onFocus={() => clearField('email')}
                 />
                 <TextArea
                     label="Message"
                     name="message"
                     error={errors?.message && errors.message}
+                    onFocus={() => clearField('message')}
                 />
                 <button
                     type="submit"
