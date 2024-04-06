@@ -20,7 +20,7 @@ import { TECH_STACK } from '../constants/techStack'
     <main>
         <section
             id="top"
-            class="from-white from-10% via-transparent to-transparent bg-cover h-[864px] flex justify-center items-center"
+            class="h-[864px] flex justify-center items-center px-2"
         >
             <div class="w-[1024px] h-[480px] flex flex-col items-center gap-4">
                 <img
@@ -28,12 +28,12 @@ import { TECH_STACK } from '../constants/techStack'
                     src="https://avatars.githubusercontent.com/u/76699893?v=4"
                     alt="Foto de perfil de jesusaviladev"
                 />
-                <h1 class="text-6xl font-bold my-4 text-center">
+                <h1 class="text-3xl md:text-6xl font-bold my-4 text-center">
                     Hola <span class="inline-block animate-wave">👋</span>, soy <span
                         class="text-green-500">@jesusaviladev</span
                     >
                 </h1>
-                <p class="text-xl font-normal text-center">
+                <p class="text-sm md:text-xl font-normal text-center">
                     Programador y entusiasta de la tecnología 👨‍💻, especialista
                     en el desarrollo de aplicaciones utilizando el ecosistema de
                     Javascript
@@ -61,22 +61,27 @@ import { TECH_STACK } from '../constants/techStack'
         </section>
         <section
             id="projects"
-            class="bg-black min-h-[1130px] py-32 px-4 text-white overflow-hidden"
+            class="bg-black min-h-[1130px] py-32 px-2 text-white overflow-hidden"
         >
             <h2 class="text-4xl font-bold p-2 text-center">Projects 💼</h2>
             <ProjectsList client:only />
         </section>
-        <section id="about" class="bg-white pt-32 text-black min-h-[700px]">
+        <section
+            id="about"
+            class="bg-white pt-32 text-black min-h-[700px] px-2"
+        >
             <h2 class="text-4xl text-center font-bold p-2 text-green-500">
                 About 🙋
             </h2>
-            <section class="p-14 text-pretty">
-                <p class="text-lg p-2">
+            <section
+                class="p-2 md:p-16 lg:pt-14 lg:px-32 text-pretty text-sm md:text-lg"
+            >
+                <p class="mt-4">
                     <strong>+3 años de experiencia en desarrollo.</strong>
                     Mi nombre es Jesus Avila, soy desarrollador frontend ubicado
                     en Barinas, Venezuela 🇻🇪.
                 </p>
-                <p class="text-lg p-2">
+                <p class="mt-4">
                     Mis tecnologías principales son
                     <a
                         href="https://react.dev"
@@ -107,7 +112,7 @@ import { TECH_STACK } from '../constants/techStack'
                         class="text-[#39bde2]">React Native</a
                     > 📱.
                 </p>
-                <p class="text-lg p-2">
+                <p class="mt-4">
                     Me encanta el lenguaje Javascript y disfruto compartiendo mi
                     conocimiento sobre el con mis companeros, <strong
                         >¡me gusta el codigo limpio y las buenas practicas!
@@ -115,7 +120,9 @@ import { TECH_STACK } from '../constants/techStack'
                 </p>
             </section>
             <section class="py-14">
-                <ul class="flex justify-center items-center gap-4">
+                <ul
+                    class="grid grid-cols-3 justify-items-center lg:flex lg:justify-center gap-4"
+                >
                     {
                         TECH_STACK.map((tech) => (
                             <Card title={tech.title} imageSrc={tech.logo} />

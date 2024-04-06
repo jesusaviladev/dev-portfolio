@@ -7,9 +7,7 @@ interface Props {
 const { title, imageSrc } = Astro.props
 ---
 
-<li
-    class="w-[120px] h-[120px] rounded-md flex flex-col justify-center items-center gap-2"
->
+<li class="size-10 md:size-32 rounded-md flex justify-center items-center">
     <img src={`${imageSrc}`} width="70" />
     <!-- <p class="font-medium text-gray-200">{title}</p> -->
 </li>
