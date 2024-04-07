@@ -64,7 +64,7 @@ import { TECH_STACK } from '../constants/techStack'
             class="bg-black min-h-[1130px] py-32 px-2 text-white overflow-hidden"
         >
             <h2 class="text-4xl font-bold p-2 text-center">Projects 💼</h2>
-            <ProjectsList client:only />
+            <ProjectsList client:only="react" />
         </section>
         <section
             id="about"
@@ -131,16 +131,19 @@ import { TECH_STACK } from '../constants/techStack'
                 </ul>
             </section>
         </section>
-        <section id="contact" class="bg-black text-white h-[652px] py-36 px-4">
+        <section
+            id="contact"
+            class="bg-black text-white h-[652px] py-36 px-4 border-b border-slate-50/15 border-solid"
+        >
             <h2 class="text-4xl text-center font-bold p-2">Contact 📥</h2>
-            <ContactForm client:only />
+            <ContactForm client:only="react" />
         </section>
         <ScrollToTop />
     </main>
     <footer
-        class="h-[260px] py-16 px-8 grid grid-rows-1 grid-cols-2 bg-black text-white"
+        class="h-[260px] py-16 px-8 grid grid-cols-1 lg:grid-cols-2 gap-4 bg-black text-white"
     >
-        <section class="p-2">
+        <section class="p-2 text-xs md:text-base text-center lg:text-left">
             <p class="my-2">
                 Made with 💖 by
                 <span class="text-green-500">@jesusaviladev</span>. This website
@@ -150,9 +153,13 @@ import { TECH_STACK } from '../constants/techStack'
                 </a>
             </p>
         </section>
-        <section class="p-2">
-            <h3 class="font-medium my-1">Social links</h3>
-            <nav class="flex gap-4 items-center">
+        <section class="p-2 order-first lg:order-last">
+            <h3 class="font-medium my-2 text-center lg:text-left">
+                Social links
+            </h3>
+            <nav
+                class="flex gap-4 justify-center lg:justify-start items-center"
+            >
                 <a
                     href="https://www.facebook.com/infernaldeathhm"
                     target="_blank"

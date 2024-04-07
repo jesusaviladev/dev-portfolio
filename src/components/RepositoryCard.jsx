@@ -24,7 +24,7 @@ const RepositoryCard = (props) => {
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 {props.description}
             </p>
-            <div className="flex items-center gap-4 mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
+            <div className="flex flex-wrap items-center gap-4 mb-3 text-xs md:text-sm font-normal text-gray-700 dark:text-gray-400">
                 {props.language && (
                     <p className="flex gap-2 items-center">
                         <span
